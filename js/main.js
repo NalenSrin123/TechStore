@@ -675,3 +675,11 @@ function hideLoading() {
 jQuery(window).on('load', function() {
     hideLoading();
 });
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.onkeydown = function (e) {
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && ['I','C','J'].includes(e.key)) || 
+        (e.ctrlKey && e.key === 'U')) {
+        return false;
+    }
+};
